@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  backup-folder:
+    build: .
+    container_name: backup-folder
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
+    command: ["sh", "/usr/local/bin/backup.sh"]
